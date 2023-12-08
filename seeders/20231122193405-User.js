@@ -4,7 +4,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-      return queryInterface.bulkInsert('User',[[
+      return queryInterface.bulkInsert('Users',[
         {
           "userName": "john_doe",
           "password": "P@ssw0rd1",
@@ -65,7 +65,7 @@ module.exports = {
           "email": "david@example.com",
           "role": "Manager"
         }
-      ]])
+      ])
   },
 
   async down (queryInterface, Sequelize) {

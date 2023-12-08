@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import {TeamsModel} from '../../models/team';
+import {Team} from '../../models/team';
 import { Op } from 'sequelize';
 @Injectable()
 export class TeamsService{
     constructor(
-        @InjectModel(TeamsModel)
-        private teamsModel: typeof TeamsModel
+        @InjectModel(Team)
+        private teamsModel: typeof Team
     ){}
     async loadAllTeams(
         title?:string
-    ): Promise<TeamsModel>{
+    ): Promise<Team[]>{
         let where ={};
         if(title){
             where={

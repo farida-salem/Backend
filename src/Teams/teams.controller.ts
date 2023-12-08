@@ -1,7 +1,7 @@
-/* eslint-disable prettier/prettier */
+
 import {Controller,Get,Query} from '@nestjs/common'
 import {TeamsService} from './teams.service'
-import {TeamsModel} from '../../models/team';
+import {Team} from '../../models/team'
 @Controller('teams')
 export class TeamsController
 {
@@ -10,7 +10,7 @@ export class TeamsController
 @Get()
 getTeams(
  @Query('team') team: string
-): Promise<TeamsModel>{
+): Promise<Team[]>{
     return this.teamsService.loadAllTeams(team);
 }
 }

@@ -6,6 +6,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Team extends Model {
   
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     static associate(models) {
       // define association here
     }
