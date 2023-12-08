@@ -1,13 +1,13 @@
-/* eslint-disable prettier/prettier */
+// teams.module.ts
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { TeamsController } from './teams.controller';
 import { TeamsService } from './teams.service';
-import {Team} from '../../models/team'
+import { Team } from './teams.model';
 
 @Module({
-    imports:[],
-    controllers: [TeamsController],
-    providers: [TeamsService]
+  imports: [SequelizeModule.forFeature([Team])],
+  controllers: [TeamsController],
+  providers: [TeamsService], // Make sure TeamsService is listed as a provider
 })
 export class TeamsModule {}

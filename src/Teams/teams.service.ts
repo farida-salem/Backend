@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import {Team} from '../../models/team';
 import { Op } from 'sequelize';
+import { Team } from './teams.model';
 @Injectable()
 export class TeamsService{
+    
     constructor(
         @InjectModel(Team)
         private teamsModel: typeof Team
@@ -21,5 +22,5 @@ export class TeamsService{
     }
     const teams = await this.teamsModel.findAll({where});
     return teams;
-}
+    }
 }
