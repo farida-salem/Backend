@@ -1,5 +1,5 @@
 
-import {Controller,Get,Query} from '@nestjs/common'
+import {Controller} from '@nestjs/common'
 import {ReservationsService} from './reservations.service'
 
 @Controller('matches')
