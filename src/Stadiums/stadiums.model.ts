@@ -1,10 +1,12 @@
 import { Column, Model, Table } from 'sequelize-typescript';
 
-@Table({ tableName: 'Stadiums', timestamps: false })
+@Table({ tableName: 'Stadium', timestamps: false })
 export class Stadium extends Model {
+    @Column({ field: 'id' ,primaryKey: true})
+    id: number;
 
-  @Column({ field: 'name' ,primaryKey: true})
-  stadiumName: string;
+  @Column({ field: 'name' })
+  name: string;
 
   @Column({ field: 'city' })
   city: string;
