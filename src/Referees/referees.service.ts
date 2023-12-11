@@ -2,15 +2,15 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Op } from 'sequelize';
-import { Referee } from './referee.model';
+import { Referee } from './referees.model';
 @Injectable()
-export class RefereeService{
+export class RefereesService{
     
     constructor(
         @InjectModel(Referee)
         private refereeModel: typeof Referee
     ){}
-    async loadAllReferee(
+    async loadAllReferees(
         title?:string
     ): Promise<Referee[]>{
         
