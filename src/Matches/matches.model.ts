@@ -1,6 +1,6 @@
 import {Team} from '../Teams/teams.model'
 import {Stadium} from '../Stadiums/stadiums.model'
-import {Referee} from '../Referee/referees.model'
+import {Referee} from '../Referees/referees.model'
 import { Column, Model, Table, DataType, ForeignKey } from 'sequelize-typescript';
 
 @Table({ tableName: 'Matches', timestamps: false })

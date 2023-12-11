@@ -7,11 +7,11 @@ export class MatchesController
 {
     constructor(private readonly teamsService: MatchesService){}
 
-// @Get()
-// findall(@Query('match') team: string
-//     ): Promise<Team[]>{
-//         return this.teamsService.loadAllTeams(team);
-//     }
+@Get()
+findall(@Query('match') team: string
+    ): Promise<Match[]>{
+        return this.teamsService.loadAllMatches(team);
+    }
 
 }
 
