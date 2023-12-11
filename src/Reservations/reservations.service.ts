@@ -2,17 +2,17 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Op } from 'sequelize';
-import { Match } from './matches.model';
+import { Reservation } from './reservations.model';
 @Injectable()
-export class MatchesService{
+export class ReservationsService{
     
     constructor(
-        @InjectModel(Match)
-        private MatchesModel: typeof Match
+        @InjectModel(Reservation)
+        private teamsModel: typeof Reservation
     ){}
-    // async loadAllMatches(
+    // async loadAllTeams(
     //     title?:string
-    // ): Promise<Team[]>{
+    // ): Promise<R[]>{
         
     //     let where ={};
 
@@ -22,7 +22,7 @@ export class MatchesService{
     //         }
     //     }
     // }
-    // const Matches = await this.MatchesModel.findAll({where});
-    // return Matches;
+    // const teams = await this.teamsModel.findAll({where});
+    // return teams;
     // }
 }

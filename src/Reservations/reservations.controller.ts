@@ -1,11 +1,11 @@
 
 import {Controller,Get,Query} from '@nestjs/common'
-import {MatchesService} from './matches.service'
-import { Match } from './matches.model';
+import {ReservationsService} from './reservations.service'
+
 @Controller('matches')
-export class MatchesController
+export class ReservationsController
 {
-    constructor(private readonly teamsService: MatchesService){}
+    constructor(private readonly teamsService: ReservationsService){}
 
 // @Get()
 // findall(@Query('match') team: string
