@@ -10,19 +10,19 @@ export class MatchesService{
         @InjectModel(Match)
         private MatchesModel: typeof Match
     ){}
-    // async loadAllMatches(
-    //     title?:string
-    // ): Promise<Team[]>{
+    async loadAllMatches(
+        title?:string
+    ): Promise<Match[]>{
         
-    //     let where ={};
+        let where ={};
 
-    //     if(title){
-    //         where={
-    //             name:{[Op.iLike]: `%${title}%`
-    //         }
-    //     }
-    // }
-    // const Matches = await this.MatchesModel.findAll({where});
-    // return Matches;
-    // }
+        if(title){
+            where={
+                name:{[Op.iLike]: `%${title}%`
+            }
+        }
+    }
+    const Matches = await this.MatchesModel.findAll({where});
+    return Matches;
+    }
 }
