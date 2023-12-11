@@ -8,7 +8,9 @@ export class Referee extends Model {
   @Column({ field: 'name' })
   name: string;
 
+
   @Column({ field: 'role' })
   role: string;
+
 
 }
