@@ -8,9 +8,9 @@ export class StadiumsController
     constructor(private readonly stadiumsService: StadiumsService){}
 
 @Get()
-findall(@Query('stadium') team: string
+findall(@Query('stadium') stadium: string
     ): Promise<Stadium[]>{
-        return this.stadiumsService.loadAllstadiums(team);
+        return this.stadiumsService.loadAllstadiums(stadium);
     }
 
 }

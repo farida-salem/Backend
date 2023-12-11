@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Stadium.init({
+    id:DataTypes.INTEGER,
     name: DataTypes.STRING,
     city: DataTypes.STRING,
     googleMapLocation: DataTypes.STRING,
