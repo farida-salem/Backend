@@ -13,7 +13,9 @@ export class TeamsService{
     async loadAllTeams(
         title?:string
     ): Promise<Team[]>{
+        
         let where ={};
+
         if(title){
             where={
                 name:{[Op.iLike]: `%${title}%`
