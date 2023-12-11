@@ -3,16 +3,20 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Stadium', {
-     
-      name: {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      name: {
         type: Sequelize.STRING
       },
       city: {
         type: Sequelize.STRING
       },
       googleMapLocation: {
-        type: Sequelize.STRING(10000)
+        type: Sequelize.STRING(100000)
       },
       seatingRows: {
         type: Sequelize.INTEGER
