@@ -1,5 +1,3 @@
-
-
 import { Controller, Body, Get, Post, Query } from '@nestjs/common'
 import { StadiumsService } from './stadiums.service'
 import { Stadium } from './stadiums.model';
