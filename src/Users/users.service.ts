@@ -54,7 +54,7 @@ export class UsersService {
 
     // If the user is not found, throw a NotFoundException
     if (!userToUpdate) {
-      throw new NotFoundException(`User with ID ${userId} not found`);
+      throw new NotFoundException();
     }
 
     // Update the role attribute
@@ -67,14 +67,27 @@ export class UsersService {
     return userToUpdate;
   }
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
-    const userToUpdate = await this.findOne(userName); 
+    const userToUpdate = await this.findOne(userName);
 
     if (!userToUpdate) {
-        return null;
+      return null;
     }
 
     Object.assign(userToUpdate, updatedUserData);
     await userToUpdate.save();
     return userToUpdate;
-}
+  }
+  async createUser(userData: Partial<User>): Promise<User> {
+    const newUser = await this.usersModel.create(userData);
+    return newUser;
+  }
+  async deleteUser(userName: string): Promise<boolean> {
+    const userToDelete = await this.usersModel.findOne({ where: { userName } });
+
+    if (!userToDelete) {
+      throw new NotFoundException();
+    }
+    await userToDelete.destroy();
+    return true;
+  }
 }

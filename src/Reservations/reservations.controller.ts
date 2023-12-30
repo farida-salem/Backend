@@ -2,10 +2,10 @@
 import {Controller} from '@nestjs/common'
 import {ReservationsService} from './reservations.service'
 
-@Controller('matches')
+@Controller('Reservations')
 export class ReservationsController
 {
-    constructor(private readonly teamsService: ReservationsService){}
+    constructor(private readonly reservationsService: ReservationsService){}
 
 // @Get()
 // findall(@Query('match') team: string
