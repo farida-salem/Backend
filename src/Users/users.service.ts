@@ -27,8 +27,8 @@ export class UsersService {
     },
   ];
 
-  async findOne(username: string): Promise<otherUser | undefined> {
-    return this.users.find(user => user.username === username);
+  async findOne(userName: string): Promise<User | null> {
+    return this.usersModel.findOne({ where: { userName } });
   }
 
   async loadAllUsers(
@@ -66,4 +66,15 @@ export class UsersService {
     // Return the updated user
     return userToUpdate;
   }
+  async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
+    const userToUpdate = await this.findOne(userName); 
+
+    if (!userToUpdate) {
+        return null;
+    }
+
+    Object.assign(userToUpdate, updatedUserData);
+    await userToUpdate.save();
+    return userToUpdate;
+}
 }
