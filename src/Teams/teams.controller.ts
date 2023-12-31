@@ -1,18 +1,20 @@
 
-import {Controller,Get,Query} from '@nestjs/common'
-import {TeamsService} from './teams.service'
+import { Controller, Get, Query, Param } from '@nestjs/common'
+import { TeamsService } from './teams.service'
 import { Team } from './teams.model';
 @Controller('teams')
-export class TeamsController
-{
-    constructor(private readonly teamsService: TeamsService){}
+export class TeamsController {
+    constructor(private readonly teamsService: TeamsService) { }
 
-@Get()
-findall(@Query('team') team: string
-    ): Promise<Team[]>{
+    @Get()
+    findall(@Query('team') team: string
+    ): Promise<Team[]> {
         return this.teamsService.loadAllTeams(team);
     }
-
+    @Get(':id')
+    findOne(@Param('id') id: string): Promise<Team | null> {
+        return this.teamsService.findTeamById(id);
+    }
 }
 
 

@@ -6,7 +6,7 @@ import { Stadium } from './stadiums.model';
 import { StadiumDto } from './stadium.dto';
 
 @Injectable()
-export class TeamsService {
+export class StadiumsService {
 
     constructor(
         @InjectModel(Stadium)
@@ -30,7 +30,7 @@ export class TeamsService {
     }
 
     async createStadium(stadiumDto: StadiumDto): Promise<Stadium> {
-        return this.stadiumModel.create(stadiumDto);
+        return this.stadiumsModel.create({ ...stadiumDto });
 
     }
 }
