@@ -10,21 +10,52 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       stadium_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Stadium',
+          key: 'id'
+        }
+        
       },
       team_away: {
+        allowNull: false,
+        references: {
+          model: 'Team',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
       team_home: {
+        allowNull: false,
+        references: {
+          model: 'Team',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
       main_referee: {
+        allowNull: false,
+        references: {
+          model: 'Referees',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
       line_referee_right: {
+        allowNull: false,
+        references: {
+          model: 'Referees',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
       line_referee_left: {
+        allowNull: false,
+        references: {
+          model: 'Referees',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
       time: {
