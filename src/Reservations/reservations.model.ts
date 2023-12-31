@@ -16,10 +16,10 @@ export class Reservation extends Model {
   matchId: number;
 
   @Column({ type: DataType.INTEGER, field: 'row' })
-  row: number;
+  reservedRow: number;
 
   @Column({ type: DataType.INTEGER, field: 'column' })
-  column: number;
+  reservedColumn: number;
 
   @BelongsTo(() => User)
   user: User;

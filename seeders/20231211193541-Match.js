@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         "id": 5,
-        "stadium_id": 5,
+        "stadium_id": 3,
         "team_away": 10,
         "team_home": 11,
         "main_referee": 5,
@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         "id": 6,
-        "stadium_id": 6,
+        "stadium_id": 2,
         "team_away": 12,
         "team_home": 13,
         "main_referee": 6,
@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         "id": 7,
-        "stadium_id": 7,
+        "stadium_id": 1,
         "team_away": 14,
         "team_home": 15,
         "main_referee": 7,
@@ -70,7 +70,7 @@ module.exports = {
       },
       {
         "id": 8,
-        "stadium_id": 8,
+        "stadium_id": 2,
         "team_away": 16,
         "team_home": 17,
         "main_referee": 8,
@@ -81,18 +81,18 @@ module.exports = {
       },
       {
         "id": 9,
-        "stadium_id": 9,
+        "stadium_id": 3,
         "team_away": 18,
         "team_home": 1,
         "main_referee": 9,
         "line_referee_right": 10,
-        "line_referee_left": 11,
+        "line_referee_left": 1,
         "time": "2023-12-20T14:55:00Z",
         "is_full": false
       },
       {
         "id": 10,
-        "stadium_id": 10,
+        "stadium_id": 1,
         "team_away": 2,
         "team_home": 3,
         "main_referee": 1,
@@ -103,7 +103,7 @@ module.exports = {
       },
       {
         "id": 11,
-        "stadium_id": 11,
+        "stadium_id": 1,
         "team_away": 4,
         "team_home": 5,
         "main_referee": 2,
@@ -114,7 +114,7 @@ module.exports = {
       },
       {
         "id": 12,
-        "stadium_id": 12,
+        "stadium_id": 2,
         "team_away": 6,
         "team_home": 7,
         "main_referee": 3,
@@ -125,7 +125,7 @@ module.exports = {
       },
       {
         "id": 13,
-        "stadium_id": 13,
+        "stadium_id": 3,
         "team_away": 8,
         "team_home": 9,
         "main_referee": 4,
@@ -136,7 +136,7 @@ module.exports = {
       },
       {
         "id": 14,
-        "stadium_id": 14,
+        "stadium_id": 3,
         "team_away": 10,
         "team_home": 11,
         "main_referee": 5,
@@ -147,7 +147,7 @@ module.exports = {
       },
       {
         "id": 15,
-        "stadium_id": 15,
+        "stadium_id": 4,
         "team_away": 12,
         "team_home": 13,
         "main_referee": 6,
@@ -158,7 +158,7 @@ module.exports = {
       },
       {
         "id": 16,
-        "stadium_id": 16,
+        "stadium_id": 4,
         "team_away": 14,
         "team_home": 15,
         "main_referee": 7,
@@ -169,7 +169,7 @@ module.exports = {
       },
       {
         "id": 17,
-        "stadium_id": 17,
+        "stadium_id": 2,
         "team_away": 16,
         "team_home": 17,
         "main_referee": 8,
@@ -180,12 +180,12 @@ module.exports = {
       },
       {
         "id": 18,
-        "stadium_id": 18,
+        "stadium_id": 1,
         "team_away": 18,
         "team_home": 1,
         "main_referee": 9,
         "line_referee_right": 10,
-        "line_referee_left": 11,
+        "line_referee_left": 3,
         "time": "2023-12-29T17:30:00Z",
         "is_full": false
       },

@@ -39,7 +39,7 @@ export class UsersService {
 
     if (title) {
       where = {
-        name: {
+        userName: {
           [Op.iLike]: `%${title}%`
         }
       }
@@ -78,8 +78,8 @@ export class UsersService {
     return userToUpdate;
   }
   async createUser(userData: Partial<User>): Promise<User> {
-    const newUser = await this.usersModel.create(userData);
-    return newUser;
+    return await this.usersModel.create(userData);
+
   }
   async deleteUser(userName: string): Promise<boolean> {
     const userToDelete = await this.usersModel.findOne({ where: { userName } });
