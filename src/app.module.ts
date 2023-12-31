@@ -12,6 +12,7 @@ import { User } from './Users/users.model';
 import { Match } from './Matches/matches.model';
 import { Reservation } from './Reservations/reservations.model';
 import { Referee } from './Referees/referees.model';
+import { ReservationsModule } from './Reservations/reservations.module';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -22,7 +23,7 @@ import { Referee } from './Referees/referees.model';
     password: 'postgres',
     database: 'EFA',
     models: [Team, Stadium, User, Match,Reservation,Referee],
-  }), TeamsModule, StadiumsModule, UsersModule, MatchesModule],
+  }), TeamsModule, StadiumsModule, UsersModule, MatchesModule,ReservationsModule],
   controllers: [AppController],
   providers: [AppService],
 })
