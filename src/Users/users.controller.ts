@@ -21,9 +21,17 @@ export class UsersController {
     }
 
     @Get()
-    findall(@Query('users') user: string
+    findall(@Query('user') user: string
     ): Promise<User[]> {
         return this.usersService.loadAllUsers(user);
+    }
+
+    @Get(':username/:password')
+    async findUserByUsernameAndPassword(
+        @Param('username') username: string,
+        @Param('password') password: string
+    ): Promise<User | null> {
+        return this.usersService.loadUserByUsernameAndPassword(username, password);
     }
 
     @Patch(':username')
