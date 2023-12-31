@@ -1,4 +1,5 @@
-import { Column, Model, Table, DataType } from 'sequelize-typescript';
+import { Column, Model, Table, DataType, HasMany } from 'sequelize-typescript';
+import { Reservation } from '../Reservations/reservations.model';
 
 @Table({ tableName: 'User', timestamps: false })
 export class User extends Model {
@@ -31,4 +32,7 @@ export class User extends Model {
 
   @Column({ type: DataType.STRING, allowNull: false, field: 'role', defaultValue: 'fan' })
   role: string;
+
+  @HasMany(() => Reservation)
+  reservations: Reservation[];
 }

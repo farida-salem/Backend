@@ -1,4 +1,5 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import { Column, HasMany, Model, Table } from 'sequelize-typescript';
+import { Match } from '../Matches/matches.model';
 
 @Table({ tableName: 'Team',timestamps: false })
 export class Team extends Model {
@@ -11,5 +12,6 @@ export class Team extends Model {
   @Column({ field: 'logo' })
   logo: string;
 
-  // Add other columns as needed
+  @HasMany(() => Match)
+  matches: Match[];
 }
