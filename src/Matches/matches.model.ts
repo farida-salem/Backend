@@ -1,7 +1,8 @@
 import {Team} from '../Teams/teams.model'
 import {Stadium} from '../Stadiums/stadiums.model'
 import {Referee} from '../Referees/referees.model'
-import { Column, Model, Table, DataType, ForeignKey } from 'sequelize-typescript';
+import { Column, Model, Table, DataType, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
+import { Reservation } from '../Reservations/reservations.model';
 
 @Table({ tableName: 'Matches', timestamps: false })
 export class Match extends Model {
@@ -37,4 +38,26 @@ export class Match extends Model {
 
   @Column({ type: DataType.BOOLEAN, field: 'is_full' })
   isFull: boolean;
+
+  @BelongsTo(() => Stadium)
+  stadium: Stadium;
+
+  @BelongsTo(() => Team, 'teamAway')
+  teamAwayData: Team;
+
+  @BelongsTo(() => Team, 'teamHome')
+  teamHomeData: Team;
+
+  @BelongsTo(() => Referee, 'mainReferee')
+  mainRefereeData: Referee;
+
+  @BelongsTo(() => Referee, 'lineRefereeRight')
+  lineRefereeRightData: Referee;
+
+  @BelongsTo(() => Referee, 'lineRefereeLeft')
+  lineRefereeLeftData: Referee;
+
+  @HasMany(() => Reservation)
+  reservations: Reservation[];
+
 }

@@ -1,4 +1,5 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import { Column, HasMany, Model, Table } from 'sequelize-typescript';
+import { Match } from '../Matches/matches.model';
 
 @Table({ tableName: 'Referee',timestamps: false })
 export class Referee extends Model {
@@ -12,5 +13,6 @@ export class Referee extends Model {
   @Column({ field: 'role' })
   role: string;
 
-
+  @HasMany(() => Match)
+  matches: Match[];
 }

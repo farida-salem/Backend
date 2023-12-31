@@ -1,5 +1,5 @@
 
-import {Controller} from '@nestjs/common'
+import {Controller, Post} from '@nestjs/common'
 import {ReservationsService} from './reservations.service'
 
 @Controller('Reservations')
@@ -12,6 +12,7 @@ export class ReservationsController
 //     ): Promise<Team[]>{
 //         return this.teamsService.loadAllTeams(team);
 //     }
+@Post(:)
 
 }
 
