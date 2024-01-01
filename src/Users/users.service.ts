@@ -25,50 +25,19 @@ export class UsersService {
 
      let where = {};
 
-    // if (title) {
-    //   where = {
-    //     userName: {
-    //       [Op.iLike]: `%${title}%`
-    //     }
-    //   }
-    // }
+    if (title) {
+      where = {
+        userName: {
+          [Op.iLike]: `%${title}%`
+        }
+      }
+    }
     const users = await this.usersModel.findAll({ where });
     return users;
   }
 
 
-  async updateUserRole(userName: number, newRole: string): Promise<User> {
 
-  async loadUserByUsernameAndPassword(username: string, password: string): Promise<User | null> {
-    const user = await this.usersModel.findOne({
-      where: {
-        userName: username,
-        password: password
-      }
-    });
-  
-    return user;
-  }
-
-  async updateUserRole(userId: number, newRole: string): Promise<User> {
-
-    // Find the user by userId
-    const userToUpdate = await this.usersModel.findByPk(userName);
-
-    // If the user is not found, throw a NotFoundException
-    if (!userToUpdate) {
-      throw new NotFoundException();
-    }
-
-    // Update the role attribute
-    userToUpdate.role = newRole;
-
-    // Save the updated user to the database
-    await userToUpdate.save();
-
-    // Return the updated user
-    return userToUpdate;
-  }
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
     const userToUpdate = await this.findOne(userName);
 
@@ -80,10 +49,12 @@ export class UsersService {
     await userToUpdate.save();
     return userToUpdate;
   }
+
   async createUser(userData: Partial<User>): Promise<User> {
     return await this.usersModel.create(userData);
 
   }
+
   async deleteUser(userName: string): Promise<boolean> {
     const userToDelete = await this.usersModel.findOne({ where: { userName } });
 
