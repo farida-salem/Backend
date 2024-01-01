@@ -12,9 +12,9 @@ export class UsersController {
     //         return this.usersService.findOne(user);
     //     }
 
-    @Patch(':id/update-role')
+    @Patch(':userName/update-role')
     async updateUserRole(
-        @Param('id') userId: number,
+        @Param('userName') userId: number,
         @Body('role') newRole: string,
     ): Promise<User> {
         return this.usersService.updateUserRole(userId, newRole);
@@ -26,8 +26,8 @@ export class UsersController {
         return this.usersService.loadAllUsers(user);
     }
 
-    @Patch(':username')
-    async updateUser(@Param('username') userName: string, @Body() updatedUserData: Partial<User>): Promise<User> {
+    @Patch(':userName')
+    async updateUser(@Param('userName') userName: string, @Body() updatedUserData: Partial<User>): Promise<User> {
         const updatedUser = await this.usersService.updateUser(userName, updatedUserData);
 
         if (!updatedUser) {
@@ -42,9 +42,9 @@ export class UsersController {
 
         return newUser;
     }
-    @Delete(':username')
-    async deleteUser(@Param('username') username: string): Promise<boolean> {
-        const deletionStatus = await this.usersService.deleteUser(username);
+    @Delete(':userName')
+    async deleteUser(@Param('userName') userName: string): Promise<boolean> {
+        const deletionStatus = await this.usersService.deleteUser(userName);
 
         if (!deletionStatus) {
             throw new NotFoundException();
