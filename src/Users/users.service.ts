@@ -90,4 +90,17 @@ export class UsersService {
     await userToDelete.destroy();
     return true;
   }
+
+  async loadUserByUsernameAndPassword(username: string, password: string): Promise<User | null> {
+    const user = await this.usersModel.findOne({
+      where: {
+        userName: username,
+        password: password,
+      },
+    });
+
+    return user;
+  }
+
+
 }
