@@ -21,13 +21,25 @@ export class UsersController {
     }
 
     @Get()
-    findall(@Query('users') user: string
+    findall(@Query('user') user: string
     ): Promise<User[]> {
         return this.usersService.loadAllUsers(user);
     }
 
     @Patch(':userName')
     async updateUser(@Param('userName') userName: string, @Body() updatedUserData: Partial<User>): Promise<User> {
+
+    @Get(':username/:password')
+    async findUserByUsernameAndPassword(
+        @Param('username') username: string,
+        @Param('password') password: string
+    ): Promise<User | null> {
+        return this.usersService.loadUserByUsernameAndPassword(username, password);
+    }
+
+    @Patch(':username')
+    async updateUser(@Param('username') userName: string, @Body() updatedUserData: Partial<User>): Promise<User> {
+
         const updatedUser = await this.usersService.updateUser(userName, updatedUserData);
 
         if (!updatedUser) {

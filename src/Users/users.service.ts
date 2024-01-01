@@ -36,7 +36,22 @@ export class UsersService {
     return users;
   }
 
+
   async updateUserRole(userName: number, newRole: string): Promise<User> {
+
+  async loadUserByUsernameAndPassword(username: string, password: string): Promise<User | null> {
+    const user = await this.usersModel.findOne({
+      where: {
+        userName: username,
+        password: password
+      }
+    });
+  
+    return user;
+  }
+
+  async updateUserRole(userId: number, newRole: string): Promise<User> {
+
     // Find the user by userId
     const userToUpdate = await this.usersModel.findByPk(userName);
 
