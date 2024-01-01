@@ -26,7 +26,7 @@ export class StadiumsController {
 
         return updatedStadium;
     }
-    @Delete(':id')
+    @Delete()
     async deleteStadium(@Query('id') id: number): Promise<boolean> {
         const deletionStatus = await this.stadiumsService.deleteStadium(id);
 
