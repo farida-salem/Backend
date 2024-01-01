@@ -12,10 +12,10 @@ module.exports = {
       },
         userid: {
             allowNull: false,
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
             references: {
             model: 'Users',
-            key: 'id'
+            key: 'userName'
             }
         },
         matchid: {

@@ -56,11 +56,6 @@ module.exports = {
         "logo": "https://example.com/al_ittihad_logo.png"
       },
       {
-        "id": 11,
-        "name": "Ismaily SC",
-        "logo": "https://example.com/ismaily_logo.png"
-      },
-      {
         "id": 12,
         "name": "Smouha SC",
         "logo": "https://example.com/smouha_logo.png"

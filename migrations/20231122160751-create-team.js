@@ -6,13 +6,19 @@ module.exports = {
     await queryInterface.createTable('Team', {
       id: {
         allowNull: false,
+        unique: true,
         primaryKey: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       logo: {
+        unique: true,
+        allowNull: false,
         type: Sequelize.STRING
       }
     });
