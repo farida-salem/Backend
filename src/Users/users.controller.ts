@@ -53,6 +53,16 @@ export class UsersController {
         return deletionStatus;
     }
 
+
+    @Get(':username/:password')
+    async findUserByUsernameAndPassword(
+        @Param('username') username: string,
+        @Param('password') password: string
+    ): Promise<User | null> {
+        return this.usersService.loadUserByUsernameAndPassword(username, password);
+    }
+
+
 }
 
 
