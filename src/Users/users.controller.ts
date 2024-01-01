@@ -62,6 +62,14 @@ export class UsersController {
         return this.usersService.loadUserByUsernameAndPassword(username, password);
     }
 
+    @Get(':status')
+    async findpending(
+        @Param('status') status: string
+    ): Promise<User[] | null> {
+        return this.usersService.loadpending(status);
+    }
+
+
 
 }
 
