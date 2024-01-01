@@ -14,18 +14,6 @@ export class UsersService {
     private usersModel: typeof User
   ) { }
 
-  private readonly users = [
-    {
-      userId: 1,
-      username: 'john',
-      password: 'changeme',
-    },
-    {
-      userId: 2,
-      username: 'maria',
-      password: 'guess',
-    },
-  ];
 
   async findOne(userName: string): Promise<User | null> {
     return this.usersModel.findOne({ where: { userName } });
@@ -35,18 +23,21 @@ export class UsersService {
     title?: string
   ): Promise<User[]> {
 
-    let where = {};
+     let where = {};
 
-    if (title) {
-      where = {
-        userName: {
-          [Op.iLike]: `%${title}%`
-        }
-      }
-    }
+    // if (title) {
+    //   where = {
+    //     userName: {
+    //       [Op.iLike]: `%${title}%`
+    //     }
+    //   }
+    // }
     const users = await this.usersModel.findAll({ where });
     return users;
   }
+
+
+  async updateUserRole(userName: number, newRole: string): Promise<User> {
 
   async loadUserByUsernameAndPassword(username: string, password: string): Promise<User | null> {
     const user = await this.usersModel.findOne({
@@ -60,8 +51,9 @@ export class UsersService {
   }
 
   async updateUserRole(userId: number, newRole: string): Promise<User> {
+
     // Find the user by userId
-    const userToUpdate = await this.usersModel.findByPk(userId);
+    const userToUpdate = await this.usersModel.findByPk(userName);
 
     // If the user is not found, throw a NotFoundException
     if (!userToUpdate) {

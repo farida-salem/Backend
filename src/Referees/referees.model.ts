@@ -1,16 +1,16 @@
-import { Column, HasMany, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, HasMany, Model, Table } from 'sequelize-typescript';
 import { Match } from '../Matches/matches.model';
 
-@Table({ tableName: 'Referee',timestamps: false })
+@Table({ tableName: 'Referees',timestamps: false })
 export class Referee extends Model {
-  @Column({ field: 'id',  primaryKey: true, autoIncrement: true })
+  @Column({type:DataType.INTEGER, field: 'id',  primaryKey: true, autoIncrement: true,allowNull: false,unique: true })
   id: number;
 
-  @Column({ field: 'name' })
+  @Column({type:DataType.STRING, field: 'name' })
   name: string;
 
 
-  @Column({ field: 'role' })
+  @Column({type:DataType.STRING, field: 'role' })
   role: string;
 
   @HasMany(() => Match)

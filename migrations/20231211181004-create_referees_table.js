@@ -5,8 +5,9 @@ module.exports = {
     await queryInterface.createTable('Referees', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        unique: true,
         primaryKey: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER
       },
       name: {

@@ -11,18 +11,45 @@ export class RefereesService{
         private refereeModel: typeof Referee
     ){}
     async loadAllReferees(
-        title?:string
-    ): Promise<Referee[]>{
-        
-        let where ={};
+        title?: string
+    ): Promise<Referee[]> {
 
-        if(title){
-            where={
-                name:{[Op.iLike]: `%${title}%`
-            }
-        }
+        let where = {};
+
+        // if (title) {
+        //     where = {
+        //         name: {
+        //             [Op.iLike]: `%${title}%`
+        //         }
+        //     }
+        // }
+        const referees = await this.refereeModel.findAll({ where });
+        return referees;
     }
-    const referee = await this.refereeModel.findAll({where});
-    return referee;
+    async loadAllMainReferees(title?: string): Promise<Referee[]> {
+        // let where = {};
+
+        // if (title) {
+        //     where = {
+        //         name: { [Op.iLike]: `%${title}%` }
+        //     };
+        // }
+
+        const referee = await this.refereeModel.findAll();
+        return referee;
+    }
+    async loadAssisinatReferees(
+        title?: string
+    ): Promise<Referee[]> {
+        let where = {};
+
+        if (title) {
+            where = {
+                name: { [Op.iLike]: `%${title}%` }
+            };
+        }
+
+        const referee = await this.refereeModel.findAll({ where: { role: 'Assistant Referee' } });
+        return referee;
     }
 }

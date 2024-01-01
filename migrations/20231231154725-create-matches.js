@@ -5,8 +5,9 @@ module.exports = {
     await queryInterface.createTable('Matches', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        unique: true,
         primaryKey: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER
       },
       stadium_id: {
@@ -33,6 +34,22 @@ module.exports = {
           key: 'id'
         },
         type: Sequelize.INTEGER
+      },
+      team_away_logo: {
+        allowNull: true,
+        references: {
+          model: 'Team',
+          key: 'logo'
+        },
+        type: Sequelize.STRING
+      },
+      team_home_logo: {
+        allowNull: true,
+        references: {
+          model: 'Team',
+          key: 'logo'
+        },
+        type: Sequelize.STRING
       },
       main_referee: {
         allowNull: false,
