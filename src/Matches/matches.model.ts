@@ -21,6 +21,14 @@ export class Match extends Model {
   @Column({ type: DataType.INTEGER, field: 'team_home' })
   teamHome: number;
 
+  @ForeignKey(() => Team)
+  @Column({ type: DataType.STRING, field: 'team_away_logo' })
+  teamAwayLogo: string;
+
+  @ForeignKey(() => Team)
+  @Column({ type: DataType.STRING, field: 'team_home_logo' })
+  teamHomeLogo:  string;
+
   @ForeignKey(() => Referee)
   @Column({ type: DataType.INTEGER, field: 'main_referee' })
   mainReferee: number;
