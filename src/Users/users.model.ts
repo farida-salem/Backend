@@ -33,6 +33,9 @@ export class User extends Model {
   @Column({ type: DataType.STRING, allowNull: false, field: 'role', defaultValue: 'fan' })
   role: string;
 
+  @Column({ type: DataType.STRING, allowNull: true, field: 'status' })
+  status: string;
+
   @HasMany(() => Reservation)
   reservations: Reservation[];
 }

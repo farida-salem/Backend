@@ -76,5 +76,15 @@ export class UsersService {
     return user;
   }
 
+  async loadpending(status: string): Promise<User[] | null> {
+    const user = await this.usersModel.findAll({
+      where: {
+        status: status,
+      },
+    });
+
+    return user;
+  }
+
 
 }

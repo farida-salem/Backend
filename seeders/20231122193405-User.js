@@ -27,7 +27,8 @@ module.exports = {
           "city": "Los Angeles",
           "address": "456 Elm St",
           "email": "alice@example.com",
-          "role": "Manager"
+          "role": "Manager",
+          "status": "pending"
         },
         {
           "userName": "mike_jones",
@@ -51,7 +52,8 @@ module.exports = {
           "city": "Houston",
           "address": "101 Pine Ave",
           "email": "sara@example.com",
-          "role": "Fan"
+          "role": "Manager",
+          "status": "pending"
         },
         {
           "userName": "david_thomas",
@@ -63,13 +65,17 @@ module.exports = {
           "city": "Miami",
           "address": "222 Palm St",
           "email": "david@example.com",
-          "role": "Manager"
+          "role": "Manager",
+          "status": "pending"
         }
       ])
   },
 
   async down (queryInterface, Sequelize) {
 
-return queryInterface.bulkDelete('Users', null, {});
+   
+      await queryInterface.bulkDelete('Users', null, {});
+     
+
   }
 };
