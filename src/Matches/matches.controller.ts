@@ -1,5 +1,5 @@
 
-import { Controller, Get, Query, Post, Delete, Body, Patch, Param, NotFoundException } from '@nestjs/common'
+import { Controller, Get, Put, Query, Post, Delete, Body, Patch, Param, NotFoundException } from '@nestjs/common'
 import { MatchesService } from './matches.service'
 import { Match } from './matches.model';
 @Controller('matches')
@@ -17,7 +17,7 @@ export class MatchesController {
 
         return newMatch;
     }
-    @Patch(':id')
+    @Put(':id') // Changed from @Patch to @Put
     async updateMatch(
         @Param('id') matchId: number,
         @Body() updatedMatchData: Partial<Match>,
