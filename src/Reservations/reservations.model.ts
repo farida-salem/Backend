@@ -8,19 +8,16 @@ export class Reservation extends Model {
   id: number;
 
   @ForeignKey(() => User)
-  @Column({ type: DataType.INTEGER, field: 'userid' })
-  userId: number;
+  @Column({ type: DataType.STRING, field: 'userid' })
+  userId: string;
 
   @ForeignKey(() => Match)
   @Column({ type: DataType.INTEGER, field: 'matchid' })
   matchId: number;
 
-  @Column({ type: DataType.INTEGER, field: 'reservedRow' })
-  reservedRow: number;
-
-  @Column({ type: DataType.INTEGER, field: 'reservedCol' })
-  reservedColumn: number;
-
+  @Column({ type: DataType.STRING, field: 'seatid' })
+  seatId: string;
+  
   @BelongsTo(() => User)
   user: User;
 

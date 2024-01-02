@@ -8,6 +8,7 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
         type: Sequelize.INTEGER
       },
         userid: {
@@ -26,16 +27,10 @@ module.exports = {
             key: 'id'
             }
         },
-        reservedRow: {
-            allowNull: false,
-            type: Sequelize.INTEGER
-        },
-        reservedCol: {
-            allowNull: false,
-            type: Sequelize.INTEGER
+        seatid: {
+            allowNull: true,
+            type: Sequelize.STRING
         }
-
-      
     });
   },
   async down(queryInterface, Sequelize) {
