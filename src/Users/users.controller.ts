@@ -6,11 +6,11 @@ import { User } from './users.model';
 export class UsersController {
     constructor(private readonly usersService: UsersService) { }
 
-    // @Get()
-    // findOne(@Query('user') user: string
-    //     ): Promise<User | undefined>{
-    //         return this.usersService.findOne(user);
-    //     }
+    @Get()
+    findOne(@Query('user') user: string
+        ): Promise<User | undefined>{
+            return this.usersService.findOne(user);
+        }
 
 
 
