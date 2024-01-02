@@ -8,87 +8,87 @@ module.exports = {
       {
         "id": 1,
         "name": "Al Ahly SC",
-        "logo": "https://example.com/al_ahly_logo.png"
+        "logo": "https://pbs.twimg.com/profile_images/1706360434620559360/ThDmyFsc_400x400.jpg"
       },
       {
         "id": 2,
         "name": "Zamalek SC",
-        "logo": "https://example.com/zamalek_logo.png"
+        "logo": "https://pbs.twimg.com/profile_images/965612259971076097/h6oX8aow_400x400.jpg"
       },
       {
         "id": 3,
         "name": "Ismaily SC",
-        "logo": "https://example.com/ismaily_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Ismaily-SC.gif?resize=379%2C380&ssl=1"
       },
       {
         "id": 4,
         "name": "Al Masry SC",
-        "logo": "https://example.com/al_masry_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2020/01/Al-Masry-Club.gif?resize=379%2C380&ssl=1"
       },
       {
         "id": 5,
         "name": "Pyramids FC",
-        "logo": "https://example.com/pyramids_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Pyramids-FC.png?w=200&ssl=1"
       },
       {
         "id": 6,
         "name": "El Mokawloon SC",
-        "logo": "https://example.com/el_mokawloon_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Al-Mokawloon-Al-Arab.png?w=200&ssl=1"
       },
       {
         "id": 7,
         "name": "ENPPI SC",
-        "logo": "https://example.com/enppi_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/ENPPI-Club.gif?resize=347%2C380&ssl=1"
       },
       {
         "id": 8,
         "name": "Tala'ea El Gaish SC",
-        "logo": "https://example.com/talaea_el_gaish_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Talaea-El-Gaish-SC.gif?resize=319%2C380&ssl=1"
       },
       {
         "id": 9,
         "name": "Wadi Degla SC",
-        "logo": "https://example.com/wadi_degla_logo.png"
+        "logo": "https://i.pinimg.com/564x/37/b4/20/37b42033a004cd7aaef67a617c190da9.jpg"
       },
       {
         "id": 10,
         "name": "Al Ittihad Alexandria Club",
-        "logo": "https://example.com/al_ittihad_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2022/09/Al-Ittihad-Alexandria-Club.gif?resize=253%2C380&ssl=1"
       },
       {
         "id": 12,
         "name": "Smouha SC",
-        "logo": "https://example.com/smouha_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Smouha-Club.gif?resize=357%2C380&ssl=1"
       },
       {
         "id": 13,
         "name": "Misr Lel-Makkasa SC",
-        "logo": "https://example.com/misr_lel_makkasa_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Baladiya-Al-Mahalla-SC.png?w=200&ssl=1"
       },
       {
         "id": 14,
-        "name": "El Entag El Harby SC",
-        "logo": "https://example.com/el_entag_el_harby_logo.png"
+        "name": "Future FC",
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/Future-FC.png?w=200&ssl=1"
       },
       {
         "id": 15,
-        "name": "Aswan SC",
-        "logo": "https://example.com/aswan_logo.png"
+        "name": "Al Dakhleya SC",
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2022/09/Al-Dakhleya-SC.png?w=200&ssl=1"
       },
       {
         "id": 16,
         "name": "Ceramica Cleopatra FC",
-        "logo": "https://example.com/ceramica_cleopatra_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2022/09/Cleapatra-FC.png?w=200&ssl=1"
       },
       {
         "id": 17,
         "name": "Gouna FC",
-        "logo": "https://example.com/gouna_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/El-Gouna-FC.png?w=200&ssl=1"
       },
       {
         "id": 18,
         "name": "National Bank of Egypt SC",
-        "logo": "https://example.com/national_bank_of_egypt_logo.png"
+        "logo": "https://i0.wp.com/worldsoccerpins.com/wp-content/uploads/2023/11/National-Bank-of-Egypt-Club.png?w=200&ssl=1"
       }
     ]);
   },
