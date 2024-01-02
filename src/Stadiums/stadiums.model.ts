@@ -3,7 +3,7 @@ import { Match } from '../Matches/matches.model'; // Import the 'Match' class
 
 @Table({ tableName: 'Stadium', timestamps: false })
 export class Stadium extends Model {
-    @Column({ field: 'id' ,primaryKey: true})
+  @Column({ field: 'id' ,primaryKey: true, autoIncrement: true,allowNull: false,unique: true})
     id: number;
 
   @Column({ field: 'name' })

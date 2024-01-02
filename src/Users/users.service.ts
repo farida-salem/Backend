@@ -14,18 +14,6 @@ export class UsersService {
     private usersModel: typeof User
   ) { }
 
-  private readonly users = [
-    {
-      userId: 1,
-      username: 'john',
-      password: 'changeme',
-    },
-    {
-      userId: 2,
-      username: 'maria',
-      password: 'guess',
-    },
-  ];
 
   async findOne(userName: string): Promise<User | null> {
     return this.usersModel.findOne({ where: { userName } });
@@ -35,7 +23,7 @@ export class UsersService {
     title?: string
   ): Promise<User[]> {
 
-    let where = {};
+     let where = {};
 
     if (title) {
       where = {
@@ -48,24 +36,8 @@ export class UsersService {
     return users;
   }
 
-  async updateUserRole(userId: number, newRole: string): Promise<User> {
-    // Find the user by userId
-    const userToUpdate = await this.usersModel.findByPk(userId);
 
-    // If the user is not found, throw a NotFoundException
-    if (!userToUpdate) {
-      throw new NotFoundException();
-    }
 
-    // Update the role attribute
-    userToUpdate.role = newRole;
-
-    // Save the updated user to the database
-    await userToUpdate.save();
-
-    // Return the updated user
-    return userToUpdate;
-  }
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
     const userToUpdate = await this.findOne(userName);
 
@@ -77,10 +49,12 @@ export class UsersService {
     await userToUpdate.save();
     return userToUpdate;
   }
+
   async createUser(userData: Partial<User>): Promise<User> {
     return await this.usersModel.create(userData);
 
   }
+
   async deleteUser(userName: string): Promise<boolean> {
     const userToDelete = await this.usersModel.findOne({ where: { userName } });
 

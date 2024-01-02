@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TeamsModule } from './Teams/teams.module';
 import { StadiumsModule } from './Stadiums/stadiums.module';
+import { RefereeModule } from './Referees/referees.module';
 import { UsersModule } from './Users/users.module';
 import { MatchesModule } from './Matches/matches.module';
 import { SequelizeModule } from '@nestjs/sequelize';
@@ -12,6 +13,7 @@ import { User } from './Users/users.model';
 import { Match } from './Matches/matches.model';
 import { Reservation } from './Reservations/reservations.model';
 import { Referee } from './Referees/referees.model';
+import { ReservationsModule } from './Reservations/reservations.module';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -22,7 +24,7 @@ import { Referee } from './Referees/referees.model';
     password: 'postgres',
     database: 'EFA',
     models: [Team, Stadium, User, Match,Reservation,Referee],
-  }), TeamsModule, StadiumsModule, UsersModule, MatchesModule],
+  }), TeamsModule, StadiumsModule, UsersModule, MatchesModule,ReservationsModule,RefereeModule],
   controllers: [AppController],
   providers: [AppService],
 })

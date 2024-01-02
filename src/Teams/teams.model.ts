@@ -6,10 +6,10 @@ export class Team extends Model {
   @Column({ field: 'id',  primaryKey: true, autoIncrement: true })
   id: number;
 
-  @Column({ field: 'name' })
+  @Column({ field: 'name' ,unique: true,allowNull: false})
   name: string;
 
-  @Column({ field: 'logo' })
+  @Column({ field: 'logo',unique: true,allowNull: false })
   logo: string;
 
   @HasMany(() => Match)
