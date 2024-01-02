@@ -7,9 +7,9 @@ export class MatchesController {
     constructor(private readonly matchesService: MatchesService) { }
 
     @Get()
-    findall(@Query('match') team: string
-    ): Promise<Match[]> {
-        return this.matchesService.loadAllMatches(team);
+    findall(@Query('match') match: number
+    ): Promise<Match[]|Match> {
+        return this.matchesService.loadAllMatches(match);
     }
     @Post()
     async createMatch(@Body() matchData: Partial<Match>): Promise<Match> {
