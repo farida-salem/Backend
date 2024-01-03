@@ -14,7 +14,7 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Matches',[
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 6,
         "team_home": 7,
         "main_referee": 3,
@@ -24,7 +24,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 8,
         "team_home": 9,
         "main_referee": 4,
@@ -34,7 +34,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 10,
         "team_home": 9,
         "main_referee": 5,
@@ -44,7 +44,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 12,
         "team_home": 13,
         "main_referee": 6,
@@ -54,7 +54,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 14,
         "team_home": 15,
         "main_referee": 7,
@@ -64,7 +64,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 16,
         "team_home": 17,
         "main_referee": 8,
@@ -74,7 +74,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 18,
         "team_home": 1,
         "main_referee": 9,
@@ -84,7 +84,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 2,
         "team_home": 3,
         "main_referee": 1,
@@ -94,7 +94,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 4,
         "team_home": 5,
         "main_referee": 2,
@@ -104,7 +104,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 6,
         "team_home": 7,
         "main_referee": 3,
@@ -114,7 +114,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 8,
         "team_home": 9,
         "main_referee": 4,
@@ -124,7 +124,7 @@ module.exports = {
         "is_full": false
       },
       {
-        "stadium_id": 18,
+        "stadium_id": 4,
         "team_away": 10,
         "team_home": 8,
         "main_referee": 5,
