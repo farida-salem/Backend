@@ -3,7 +3,7 @@ import { Reservation } from '../Reservations/reservations.model';
 
 @Table({ tableName: 'Users', timestamps: false })
 export class User extends Model {
-  @Column({ type: DataType.STRING,primaryKey:true, unique: true, allowNull: false, field: 'userName' })
+  @Column({ type: DataType.STRING, primaryKey: true, unique: true, allowNull: false, field: 'userName' })
   userName: string;
 
   @Column({ type: DataType.STRING, allowNull: false, field: 'password' })

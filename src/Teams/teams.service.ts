@@ -10,6 +10,7 @@ export class TeamsService {
         @InjectModel(Team)
         private teamsModel: typeof Team
     ) { }
+
     async loadAllTeams(
         title?: string
     ): Promise<Team[]> {
@@ -26,6 +27,7 @@ export class TeamsService {
         const teams = await this.teamsModel.findAll({ where });
         return teams;
     }
+
     async findTeamById(id: string): Promise<Team | null> {
         const team = await this.teamsModel.findOne({ where: { id } })
         if (!team) {

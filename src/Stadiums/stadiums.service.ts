@@ -53,7 +53,7 @@ export class StadiumsService {
         await stadiumToDelete.destroy();
         return true;
     }
-    
+
     async findStadiumById(id: number): Promise<Stadium | null> {
         const stadium = await this.stadiumsModel.findOne({ where: { id } })
         if (!stadium) {

@@ -11,7 +11,7 @@ export class TeamsController {
     ): Promise<Team[]> {
         return this.teamsService.loadAllTeams(team);
     }
-    
+
     @Get(':id')
     findOne(@Param('id') id: string): Promise<Team | null> {
         return this.teamsService.findTeamById(id);

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Match } from './matches.model';
+
 @Injectable()
 export class MatchesService {
   constructor(
@@ -23,6 +24,7 @@ export class MatchesService {
 
     return newMatch;
   }
+
   async updateMatch(matchId: number, updatedMatchData: Partial<Match>): Promise<Match | null> {
     const matchToUpdate = await this.MatchesModel.findByPk(matchId);
 
@@ -33,6 +35,7 @@ export class MatchesService {
     await matchToUpdate.save();
     return matchToUpdate;
   }
+
   async deleteMatch(matchId: number): Promise<boolean> {
     const matchToDelete = await this.MatchesModel.findByPk(matchId);
     if (!matchToDelete) {

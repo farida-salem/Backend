@@ -10,4 +10,4 @@ import { User } from './users.model';
   controllers: [UsersController],
   providers: [UsersService], // Make sure Service is listed as a provider
 })
-export class UsersModule {}
+export class UsersModule { }

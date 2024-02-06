@@ -32,7 +32,7 @@ export class MatchesController {
 
         return updatedMatch;
     }
-    
+
     @Delete(':id')
     async deleteMatch(@Param('id') matchId: number): Promise<boolean> {
         const deletionStatus = await this.matchesService.deleteMatch(matchId);

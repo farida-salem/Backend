@@ -11,6 +11,7 @@ export class ReservationsController {
     async findAll(@Query('reservations') reservation: string): Promise<Reservation[]> {
         return this.reservationsService.loadAllReservations(reservation);
     }
+
     @Get('user/:userId')
     async findUserReservations(@Param('userId') userId: number): Promise<Reservation[]> {
         return this.reservationsService.loadUserReservations(userId);
@@ -26,6 +27,7 @@ export class ReservationsController {
         const newReservation = await this.reservationsService.createReservation(reservationModel);
         return newReservation;
     }
+
     @Delete(':id')
     async deleteReservation(@Param('id') id: number): Promise<boolean> {
         const deletionStatus = await this.reservationsService.deleteReservation(id);
