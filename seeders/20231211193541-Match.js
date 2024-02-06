@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    return queryInterface.bulkInsert('Matches',[
+    return queryInterface.bulkInsert('Matches', [
       {
         "stadium_id": 4,
         "team_away": 6,
@@ -133,15 +133,15 @@ module.exports = {
         "time": "2023-12-25T14:30:00Z",
         "is_full": false
       }
-      
-     
+
+
     ]
     )
   },
 
-  async down (queryInterface, Sequelize) {
-    
-      await queryInterface.bulkDelete('Matches', null, {});
-     
+  async down(queryInterface, Sequelize) {
+
+    await queryInterface.bulkDelete('Matches', null, {});
+
   }
 };

@@ -1,19 +1,17 @@
-/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Op } from 'sequelize';
 import { Match } from './matches.model';
 @Injectable()
 export class MatchesService {
   constructor(
     @InjectModel(Match)
     private MatchesModel: typeof Match
-  ) {}
+  ) { }
 
-  async loadAllMatches(title?: number): Promise<Match[]|Match> {
+  async loadAllMatches(title?: number): Promise<Match[] | Match> {
     if (title) {
       const match = await this.MatchesModel.findByPk(title);
-      return match ;
+      return match;
     }
 
     const matches = await this.MatchesModel.findAll();

@@ -10,4 +10,4 @@ import { Referee } from './referees.model';
   controllers: [RefereesController],
   providers: [RefereesService], // Make sure RefereeService is listed as a provider
 })
-export class RefereeModule {}
+export class RefereeModule { }

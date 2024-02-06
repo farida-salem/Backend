@@ -4,7 +4,7 @@ import { Referee } from './referees.model';
 
 @Controller('referees')
 export class RefereesController {
-    constructor(private readonly refereesService: RefereesService) {}
+    constructor(private readonly refereesService: RefereesService) { }
 
     @Get('main')
     findMainReferee(): Promise<Referee[]> {

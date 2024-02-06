@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-import { Injectable,NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Op } from 'sequelize';
 import { Stadium } from './stadiums.model';
@@ -7,12 +6,11 @@ import { StadiumDto } from './stadium.dto';
 
 @Injectable()
 export class StadiumsService {
-    
-
     constructor(
         @InjectModel(Stadium)
         private stadiumsModel: typeof Stadium
     ) { }
+
     async loadAllStadiums(
         title?: string
     ): Promise<Stadium[]> {
@@ -34,6 +32,7 @@ export class StadiumsService {
         return this.stadiumsModel.create({ ...stadiumDto });
 
     }
+
     async updateStadium(id: number, updatedStadiumData: Partial<Stadium>): Promise<Stadium> {
         const stadiumToUpdate = await this.stadiumsModel.findByPk(id);
 
@@ -45,14 +44,16 @@ export class StadiumsService {
 
         return stadiumToUpdate;
     }
+
     async deleteStadium(id: number): Promise<boolean> {
         const stadiumToDelete = await this.stadiumsModel.findOne({ where: { id } });
         if (!stadiumToDelete) {
             throw new NotFoundException();
-          }
-          await stadiumToDelete.destroy();
-          return true;
+        }
+        await stadiumToDelete.destroy();
+        return true;
     }
+    
     async findStadiumById(id: number): Promise<Stadium | null> {
         const stadium = await this.stadiumsModel.findOne({ where: { id } })
         if (!stadium) {
@@ -60,5 +61,5 @@ export class StadiumsService {
         }
         return stadium;
     }
-   
+
 }

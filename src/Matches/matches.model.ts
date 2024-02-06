@@ -1,6 +1,6 @@
-import {Team} from '../Teams/teams.model'
-import {Stadium} from '../Stadiums/stadiums.model'
-import {Referee} from '../Referees/referees.model'
+import { Team } from '../Teams/teams.model'
+import { Stadium } from '../Stadiums/stadiums.model'
+import { Referee } from '../Referees/referees.model'
 import { Column, Model, Table, DataType, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
 import { Reservation } from '../Reservations/reservations.model';
 
@@ -26,11 +26,11 @@ export class Match extends Model {
   teamAwayLogo: string;
 
   @ForeignKey(() => Team)
-  @Column({ type: DataType.STRING, field: 'team_home_logo',allowNull: true })
-  teamHomeLogo:  string;
+  @Column({ type: DataType.STRING, field: 'team_home_logo', allowNull: true })
+  teamHomeLogo: string;
 
   @ForeignKey(() => Referee)
-  @Column({ type: DataType.INTEGER, field: 'main_referee',allowNull: true })
+  @Column({ type: DataType.INTEGER, field: 'main_referee', allowNull: true })
   mainReferee: number;
 
   @ForeignKey(() => Referee)

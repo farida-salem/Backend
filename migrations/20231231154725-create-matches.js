@@ -17,7 +17,7 @@ module.exports = {
           model: 'Stadium',
           key: 'id'
         }
-        
+
       },
       team_away: {
         allowNull: false,

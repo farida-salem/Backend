@@ -20,11 +20,11 @@ export class ReservationsController {
     async findMatchReservations(@Param('matchId') matchId: number): Promise<Reservation[]> {
         return this.reservationsService.loadMatchReservations(matchId);
     }
-    
+
     @Post()
-    async createReservation(@Body() reservationModel:Partial<Reservation>): Promise<Reservation> {
+    async createReservation(@Body() reservationModel: Partial<Reservation>): Promise<Reservation> {
         const newReservation = await this.reservationsService.createReservation(reservationModel);
-         return newReservation;
+        return newReservation;
     }
     @Delete(':id')
     async deleteReservation(@Param('id') id: number): Promise<boolean> {

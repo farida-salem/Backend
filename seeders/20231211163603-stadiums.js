@@ -26,8 +26,10 @@ module.exports = {
         "seatingRows": 80,
         "seatingColumns": 120
       },
-      { "name": "Borg Al Arab Sports Hall", "city": "Alexandria", "googleMapLocation": "https://www.google.com/maps?q=Borg+El+Arab+Stadium,+Cairo+-+Borg+El-Arab+Desert+Rd,+Ekeingy+Maryout+(Sharq+WA+Gharb),+Al+Amaria+First,+Alexandria+Governorate&ftid=0x14f58d8f3351acc3:0xf81176bc5e0773d4&hl=en-EG&gl=eg&entry=gps&shorturl=1", "seatingRows": 80,
-      "seatingColumns": 120},
+      {
+        "name": "Borg Al Arab Sports Hall", "city": "Alexandria", "googleMapLocation": "https://www.google.com/maps?q=Borg+El+Arab+Stadium,+Cairo+-+Borg+El-Arab+Desert+Rd,+Ekeingy+Maryout+(Sharq+WA+Gharb),+Al+Amaria+First,+Alexandria+Governorate&ftid=0x14f58d8f3351acc3:0xf81176bc5e0773d4&hl=en-EG&gl=eg&entry=gps&shorturl=1", "seatingRows": 80,
+        "seatingColumns": 120
+      },
       // Add more stadiums as needed
     ]);
   },

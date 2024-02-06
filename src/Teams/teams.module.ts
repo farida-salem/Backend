@@ -10,4 +10,4 @@ import { Team } from './teams.model';
   controllers: [TeamsController],
   providers: [TeamsService], // Make sure TeamsService is listed as a provider
 })
-export class TeamsModule {}
+export class TeamsModule { }

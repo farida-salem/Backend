@@ -11,26 +11,26 @@ module.exports = {
         autoIncrement: true,
         type: Sequelize.INTEGER
       },
-        userid: {
-            allowNull: false,
-            type: Sequelize.STRING,
-            references: {
-            model: 'Users',
-            key: 'userName'
-            }
-        },
-        matchid: {
-            allowNull: false,
-            type: Sequelize.INTEGER,
-            references: {
-            model: 'Matches',
-            key: 'id'
-            }
-        },
-        seatid: {
-            allowNull: true,
-            type: Sequelize.STRING
+      userid: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        references: {
+          model: 'Users',
+          key: 'userName'
         }
+      },
+      matchid: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Matches',
+          key: 'id'
+        }
+      },
+      seatid: {
+        allowNull: true,
+        type: Sequelize.STRING
+      }
     });
   },
   async down(queryInterface, Sequelize) {

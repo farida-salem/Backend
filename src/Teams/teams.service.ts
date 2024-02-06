@@ -1,8 +1,8 @@
-/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Op } from 'sequelize';
 import { Team } from './teams.model';
+
 @Injectable()
 export class TeamsService {
 

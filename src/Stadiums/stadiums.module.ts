@@ -10,4 +10,4 @@ import { Stadium } from './stadiums.model';
   controllers: [StadiumsController],
   providers: [StadiumsService], // Make sure stadiumsService is listed as a provider
 })
-export class StadiumsModule {}
+export class StadiumsModule { }

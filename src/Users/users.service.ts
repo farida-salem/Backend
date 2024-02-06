@@ -4,7 +4,6 @@ import { InjectModel } from '@nestjs/sequelize';
 import { Op } from 'sequelize';
 import { User } from './users.model';
 
-// This should be a real class/interface representing a user entity
 export type otherUser = any;
 
 @Injectable()
@@ -14,7 +13,6 @@ export class UsersService {
     private usersModel: typeof User
   ) { }
 
-
   async findOne(userName: string): Promise<User | null> {
     return this.usersModel.findOne({ where: { userName } });
   }
@@ -23,7 +21,7 @@ export class UsersService {
     title?: string
   ): Promise<User[]> {
 
-     let where = {};
+    let where = {};
 
     if (title) {
       where = {
@@ -32,11 +30,10 @@ export class UsersService {
         }
       }
     }
+
     const users = await this.usersModel.findAll({ where });
     return users;
   }
-
-
 
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
     const userToUpdate = await this.findOne(userName);
@@ -61,6 +58,7 @@ export class UsersService {
     if (!userToDelete) {
       throw new NotFoundException();
     }
+
     await userToDelete.destroy();
     return true;
   }

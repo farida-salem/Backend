@@ -10,4 +10,4 @@ import { Reservation } from './reservations.model';
   controllers: [ReservationsController],
   providers: [ReservationsService], // Make sure ReservationsService is listed as a provider
 })
-export class ReservationsModule {}
+export class ReservationsModule { }

@@ -10,4 +10,4 @@ import { Match } from './matches.model';
   controllers: [MatchesController],
   providers: [MatchesService], // Make sure MatchesService is listed as a provider
 })
-export class MatchesModule {}
+export class MatchesModule { }
