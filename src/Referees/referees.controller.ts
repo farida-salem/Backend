@@ -21,6 +21,6 @@ export class RefereesController {
         if (id) {
             return this.refereesService.findRefereeById(id);
         }
-        // return this.refereesService.loadAllReferees();
+        
     }
 }
