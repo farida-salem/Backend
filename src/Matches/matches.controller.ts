@@ -8,7 +8,7 @@ export class MatchesController {
     constructor(private readonly matchesService: MatchesService) { }
 
     @Get()
-    findall(@Query('match') match: number
+    findAll(@Query('match') match: number
     ): Promise<Match[] | Match> {
         return this.matchesService.loadAllMatches(match);
     }
@@ -16,7 +16,6 @@ export class MatchesController {
     @Post()
     async createMatch(@Body() matchData: Partial<Match>): Promise<Match> {
         const newMatch = await this.matchesService.createMatch(matchData);
-
         return newMatch;
     }
 
@@ -26,7 +25,6 @@ export class MatchesController {
         @Body() updatedMatchData: Partial<Match>,
     ): Promise<Match> {
         const updatedMatch = await this.matchesService.updateMatch(matchId, updatedMatchData);
-
         if (!updatedMatch) {
             throw new NotFoundException();
         }
@@ -37,7 +35,6 @@ export class MatchesController {
     @Delete(':id')
     async deleteMatch(@Param('id') matchId: number): Promise<boolean> {
         const deletionStatus = await this.matchesService.deleteMatch(matchId);
-
         if (!deletionStatus) {
             throw new NotFoundException();
         }

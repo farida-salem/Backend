@@ -12,15 +12,13 @@ export class StadiumsService {
     ) { }
 
     async loadAllStadiums(
-        title?: string
+        stadiumName?: string
     ): Promise<Stadium[]> {
-
         let where = {};
-
-        if (title) {
+        if (stadiumName) {
             where = {
                 name: {
-                    [Op.iLike]: `%${title}%`
+                    [Op.iLike]: `%${stadiumName}%`
                 }
             }
         }
@@ -30,18 +28,14 @@ export class StadiumsService {
 
     async createStadium(stadiumDto: StadiumDto): Promise<Stadium> {
         return this.stadiumsModel.create({ ...stadiumDto });
-
     }
 
     async updateStadium(id: number, updatedStadiumData: Partial<Stadium>): Promise<Stadium> {
         const stadiumToUpdate = await this.stadiumsModel.findByPk(id);
-
         if (!stadiumToUpdate) {
             throw new NotFoundException();
         }
-
         await stadiumToUpdate.update(updatedStadiumData);
-
         return stadiumToUpdate;
     }
 

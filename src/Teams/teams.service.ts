@@ -5,22 +5,19 @@ import { Team } from './teams.model';
 
 @Injectable()
 export class TeamsService {
-
     constructor(
         @InjectModel(Team)
         private teamsModel: typeof Team
     ) { }
 
     async loadAllTeams(
-        title?: string
+        teamName?: string
     ): Promise<Team[]> {
-
         let where = {};
-
-        if (title) {
+        if (teamName) {
             where = {
                 name: {
-                    [Op.iLike]: `%${title}%`
+                    [Op.iLike]: `%${teamName}%`
                 }
             }
         }
@@ -28,7 +25,7 @@ export class TeamsService {
         return teams;
     }
 
-    async findTeamById(id: string): Promise<Team | null> {
+    async loadTeamById(id: string): Promise<Team | null> {
         const team = await this.teamsModel.findOne({ where: { id } })
         if (!team) {
             throw new NotFoundException('Team not found');

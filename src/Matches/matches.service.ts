@@ -9,9 +9,9 @@ export class MatchesService {
     private MatchesModel: typeof Match
   ) { }
 
-  async loadAllMatches(title?: number): Promise<Match[] | Match> {
-    if (title) {
-      const match = await this.MatchesModel.findByPk(title);
+  async loadAllMatches(id?: number): Promise<Match[] | Match> {
+    if (id) {
+      const match = await this.MatchesModel.findByPk(id);
       return match;
     }
 
@@ -21,13 +21,11 @@ export class MatchesService {
 
   async createMatch(matchData: Partial<Match>): Promise<Match> {
     const newMatch = await this.MatchesModel.create(matchData);
-
     return newMatch;
   }
 
   async updateMatch(matchId: number, updatedMatchData: Partial<Match>): Promise<Match | null> {
     const matchToUpdate = await this.MatchesModel.findByPk(matchId);
-
     if (!matchToUpdate) {
       return null;
     }

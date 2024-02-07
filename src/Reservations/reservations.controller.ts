@@ -7,7 +7,7 @@ export class ReservationsController {
     constructor(private readonly reservationsService: ReservationsService) { }
 
     @Get()
-    async findAll(@Query('reservations') reservation: string): Promise<Reservation[]> {
+    async findAll(@Query('reservation') reservation: string): Promise<Reservation[]> {
         return this.reservationsService.loadAllReservations(reservation);
     }
 

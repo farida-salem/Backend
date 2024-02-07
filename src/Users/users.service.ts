@@ -18,15 +18,13 @@ export class UsersService {
   }
 
   async loadAllUsers(
-    title?: string
+    name?: string
   ): Promise<User[]> {
-
     let where = {};
-
-    if (title) {
+    if (name) {
       where = {
         userName: {
-          [Op.iLike]: `%${title}%`
+          [Op.iLike]: `%${name}%`
         }
       }
     }
@@ -37,7 +35,6 @@ export class UsersService {
 
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
     const userToUpdate = await this.findOne(userName);
-
     if (!userToUpdate) {
       return null;
     }
@@ -54,7 +51,6 @@ export class UsersService {
 
   async deleteUser(userName: string): Promise<boolean> {
     const userToDelete = await this.usersModel.findOne({ where: { userName } });
-
     if (!userToDelete) {
       throw new NotFoundException();
     }
@@ -63,7 +59,7 @@ export class UsersService {
     return true;
   }
 
-  async loadUserByUsernameAndPassword(username: string, password: string): Promise<User | null> {
+  async loadUserByUserNameAndPassword(username: string, password: string): Promise<User | null> {
     const user = await this.usersModel.findOne({
       where: {
         userName: username,
@@ -74,7 +70,7 @@ export class UsersService {
     return user;
   }
 
-  async loadpending(status: string): Promise<User[] | null> {
+  async loadPending(status: string): Promise<User[] | null> {
     const user = await this.usersModel.findAll({
       where: {
         status: status,

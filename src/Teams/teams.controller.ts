@@ -7,14 +7,14 @@ export class TeamsController {
     constructor(private readonly teamsService: TeamsService) { }
 
     @Get()
-    findall(@Query('team') team: string
+    findAll(@Query('team') team: string
     ): Promise<Team[]> {
         return this.teamsService.loadAllTeams(team);
     }
 
     @Get(':id')
     findOne(@Param('id') id: string): Promise<Team | null> {
-        return this.teamsService.findTeamById(id);
+        return this.teamsService.loadTeamById(id);
     }
 }
 
