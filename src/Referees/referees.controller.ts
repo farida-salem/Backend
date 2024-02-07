@@ -19,7 +19,7 @@ export class RefereesController {
     @Get()
     findById(@Query('id') id?: number): Promise<Referee> {
         if (id) {
-            return this.refereesService.findRefereeById(id);
+            return this.refereesService.loadRefereeById(id);
         }
         
     }

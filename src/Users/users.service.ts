@@ -13,7 +13,7 @@ export class UsersService {
     private usersModel: typeof User
   ) { }
 
-  async findOne(userName: string): Promise<User | null> {
+  async loadOne(userName: string): Promise<User | null> {
     return this.usersModel.findOne({ where: { userName } });
   }
 
@@ -34,7 +34,7 @@ export class UsersService {
   }
 
   async updateUser(userName: string, updatedUserData: Partial<User>): Promise<User | null> {
-    const userToUpdate = await this.findOne(userName);
+    const userToUpdate = await this.loadOne(userName);
     if (!userToUpdate) {
       return null;
     }

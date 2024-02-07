@@ -14,7 +14,7 @@ export class RefereesService {
         return referees;
     }
 
-    async findRefereeById(id: number): Promise<Referee> {
+    async loadRefereeById(id: number): Promise<Referee> {
         const referees = await this.refereeModel.findOne({ where: { id } });
         return referees;
     }
